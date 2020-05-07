@@ -62,6 +62,7 @@ Each of the two inputs files contains similar information, namely:
 
 
 => Test
+
 The response should be as clean as possible. You can devise any type of output to display your results (data frame, an Excel spreadsheet sorted by a Python command, a sentence printed via Python, etc.). Keep in mind that, as an operational team, the recipient should be able to interpret results quickly. We will evaluate the quality of your code.
 
 Part 1:
