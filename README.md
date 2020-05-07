@@ -2,9 +2,9 @@
 
 # Welcome ! 
 
-In this page you can find the description of a coding challenge that we ask people to perform when applying for a VIE position in our team. This test is not only a coding challenge but also some knowledge around the energy markets will be useful. 
+In this page you can find the description of a coding challenge that we ask candidates to perform when applying for a VIE position at Power Day-ahead (PDA). 
 
-The goal of this coding challenge is to provide the applicant some insight into the business we're in and as such provide the applicant an indication about the challenges she/he will be confronted with. Next, during the first interview we will use the applicant's implementation as a seed to discuss.
+The goal of this coding challenge is to provide applicants with an insight into the business we're in, as well as give them an indication about the challenges they will be confronted with. During the interview we will use the applicant's implementation of the solution as a seed to discuss.
 
 # Role description:
 
