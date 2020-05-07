@@ -34,48 +34,46 @@ All market operations performed at PDA are organized in shifts. Subject to avail
 
 # Rules of the coding challenge : 
 
-There a two different parts with two input files.
-The two parts are completely independents but feel free to code whatever you want. You can use some code lines for both parts. If you have some problems for one of these parts it is not a blocking point for the other one.
+The exercise consists of two separate, independent parts (with two input files). You can use code lines for both parts and resolve them independently.
+
 
 => Inputs
 
-Each of the two inputs files contain the same kind of information such as: 
+Each of the two inputs files contains similar information, namely:
 
-•	Load: the load is the amount of energy (MWh) that need to be generated during one hour.
+• Load: the load is the amount of energy (MWh) that needs to be delivered during any single hour.
 
-•	Fuels: based on the cost of the fuels of each powerplant, the merit-order can be determined which is the starting point for deciding which powerplants should be switched on and how much power they will deliver. Wind-turbine are either switched-on, and in that case generate a certain amount of energy depending on the % of wind, or can be switched off.
+• Fuel costs: based on the cost of the fuels of each power plant, the merit-order of the portfolio can be determined.
 
-- Gas (euro/MWh): the price of gas per MWh. Thus if gas is at 6 euro/MWh and if the efficiency of the powerplant is 50% (i.e. 2 units of gas will generate one unit of electricity), the cost of generating 1 MWh is 12 euro.
+- Gas (euro/MWh): the price of gas per MWh. If the gas price is at 6 euro/MWh and the efficiency of the powerplant is 50% (i.e. 2 units of gas will generate one unit of electricity), the cost of generating 1 MWh is 12 euro.
 - Kerosene (euro/MWh): the price of kerosene per MWh.
-- Co2 (euro/ton): the price of emission allowances (optionally to be taken into account).
-- Wind (%): percentage of wind. Example: if there is on average 25% wind during an hour, a wind-turbine with a Pmax of 4 MW will generate 1MWh of energy.
+- Co2 (euro/ton): the price of emission allowances (to be taken into account only optionally, not mandatory for the exercise).
+- Wind (%): wind coefficient. Example: if there is on average 25% wind during an hour, a wind-turbine with a capacity of 4 MW will generate 1 MWh of energy.
 
-•	Powerplants: describes the powerplants at disposal to generate the demanded load. For each powerplant, is specified:
-- Name
-- Type: gas fired, turbojet or wind turbine.
-- Efficiency: the efficiency at which they convert a MWh of fuel into a MWh of electrical energy. Wind-turbines do not consume 'fuel' and thus are considered to generate power at zero price.
-- Pmax: the maximum amount of power the powerplant can generate.
-- Pmin: the minimum amount of power the powerplant generates when switched on.
+• Power plants: describes the assets at disposal to generate the demanded load. For each power plant, the information specified is the following:
 
-•	Market Spot Prices (only for Part 2).
+-	Name
+-	Type: gas fired, turbojet or wind turbine.
+-	Efficiency: the rate at which they convert a MWh of fuel into a MWh of electrical energy. Wind turbines do not consume fuel and thus do not to incur any fuel costs.
+-	Pmax: the maximum amount of power the plant can generate.
+-	Pmin: the minimum amount of power the plant generates when switched on.
+
+• Market spot prices (only for part 2).
 
 
 => Test
+The response should be as clean as possible. You can devise any type of output to display your results (data frame, an Excel spreadsheet sorted by a Python command, a sentence printed via Python, etc.). Keep in mind that, as an operational team, the recipient should be able to interpret results quickly. We will evaluate the quality of your code.
 
-The response should be cleaner as possible. You could imagine any kind of outputs to displays your results (Dataframe, Excel sorted by a python command, sentence printed via python…) but do not forget that as an operational team, we like some clear information. Moreover, you can code as you want but be careful because we will be very sensitive to the quality of your code.
+Part 1:
 
+1.	Determine the merit order of the portfolio.
+2.	Specify the power output of each asset in order for the portfolio to cover the given load and maximize its total revenues.
 
-Part 1 : 
+Part 2:
 
-1)	Determine the Merit Order of this virtual economics area.
-2)	Classify the plants from the cheaper one to the most expensive in terms of power production.
-3)	Specify for each powerplant how much power it should deliver to have a portofolio which matchs exactly the given load. 
+For this part, the commitment of the portfolio is independent of the load. The load can be covered by either buying the necessary energy from the market or, else, scheduling the assets to cover the load. In addition to that, assets can be scheduled to produce power up to their maximum capacity (and beyond the required load).
 
-Part 2 :
-
-For this second part, we make the following assumption : you can do whatever you want with the production of the assets. That is to say, we assume that we do not have any technical constraints and we can produce at Pmax at a certain hour and to stop the production the next hour easily.
-
-1)	Determine an hourly production plan which maximizes our P&L in these economic conditions. 
-2)	Explain our positions on the market for each of these hours. 
-3)	Display the hourly P&L for each assets, then the hourly and the daily P&L for the entire portfolio.
+1.	Determine an hourly production plan that maximizes overall portfolio revenues.
+2.	Display the position of the power plants (MWh) on the market for each of these hours.
+3.	Display the hourly cash flow for each asset as well as the hourly and the daily cash flow for the entire portfolio.
 
