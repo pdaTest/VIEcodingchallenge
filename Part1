@@ -1,0 +1,84 @@
+Skip to content
+ Enterprise
+Search or jump to…
+
+Pull requests
+Issues
+Explore
+ 
+@HS5972 
+HS5972
+/
+PDA_Test
+1
+00
+ Code Issues 0 Pull requests 0 Projects 0 Wiki Insights Settings
+PDA_Test/Part1
+@HS5972 HS5972 Rename TestP1.py to Part1
+b3832e1 21 hours ago
+56 lines (55 sloc)  955 Bytes
+  
+{
+  "load": 480,
+  "fuels":
+  {
+    "gas(euro/MWh)": 13.4,
+    "kerosine(euro/MWh)": 50.8,
+    "co2(euro/ton)": 20,
+    "coal (euro/ton)": 20,
+    "wind(%)": 60
+  },
+  "powerplants": [
+    {
+      "name": "gasfiredbig1",
+      "type": "CCGT",
+      "efficiency": 0.53,
+      "pmin": 100,
+      "pmax": 460
+    },
+    {
+      "name": "gasfiredbig2",
+      "type": "CCGT",
+      "efficiency": 0.53,
+      "pmin": 100,
+      "pmax": 460
+    },
+    {
+      "name": "gasfiredsomewhatsmaller",
+      "type": "GT",
+      "efficiency": 0.37,
+      "pmin": 40,
+      "pmax": 210
+    },
+    {
+      "name": "tj1",
+      "type": "turbojet",
+      "efficiency": 0.3,
+      "pmin": 0,
+      "pmax": 16
+    },
+    {
+      "name": "windpark1",
+      "type": "windturbine",
+      "efficiency": 1,
+      "pmin": 0,
+      "pmax": 150
+    },
+    {
+      "name": "windpark2",
+      "type": "windturbine",
+      "efficiency": 1,
+      "pmin": 0,
+      "pmax": 36
+    }
+  ]
+
+}
+© 2020 GitHub, Inc.
+Help
+Support
+API
+Training
+Blog
+About
+GitHub Enterprise Server 2.20.1
