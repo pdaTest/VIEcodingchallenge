@@ -1,41 +1,32 @@
 ## PDA TEST
 
-# Welcome ! 
+# Welcome! 
 
-In this page you can find the description of a coding challenge that we ask people to perform when applying for a VIE position in our team. This test is not only a coding challenge but also some knowledge around the energy markets will be useful. 
+In this page you can find the description of a coding challenge that we ask candidates to perform when applying for a VIE position in our team. This test is not only a coding challenge: knowledge around energy markets will be useful. 
 
-The goal of this coding challenge is to provide the applicant some insight into the business we're in and as such provide the applicant an indication about the challenges she/he will be confronted with. Next, during the first interview we will use the applicant's implementation as a seed to discuss.
+The goal of this coding challenge is to provide the applicant with some insights into the business we're in as well as notions on the challenges she/he will be confronted with. Next, during the recruitment interviews we will use the applicant's implementation as a seed to discuss.
 
 # Role description:
 
-The role consists of providing quantitative analytical support to all market operations ran by the Power Day-ahead (PDA) team of Engie Global Energy Management (GEM) in Brussels. The PDA team is in charge of bidding the capacities of the Engie power plant portfolios on the DA exchanges of all Central Western Europe (CWE) countries. This includes setting up optimal strategies that emphasize the use of smart bidding products and that result in schedules for each plant that maximize revenues, ensure physical balance and compliance with market rules.
+The role consists of providing development support on all market operations ran by the Power Day-ahead (PDA) team within Engie Global Energy Management (GEM) in Brussels. The PDA team is in charge of bidding the capacities of the power plant portfolios on the spot auctions (day-ahead) of all Central Western Europe (CWE) countries. This includes setting up optimal strategies that emphasize the use of smart bidding products and that result in schedules for each plant that maximize revenues, all the while ensuring physical balance and strict compliance with market rules.
 
 An important part of the operations is related to ancillary services. PDA also ensures the bidding of all ancillary capacities available in the portfolios on the reserve tenders organized by national TSOs. This tender activity is evolving fast, with new products and more frequent deadlines becoming the norm in CWE. There are ongoing efforts to improve the current processes (and develop new ones where applicable) that enable PDA to cost and price these contracts, but there remains a strong need for analytical support and market follow-up.
 
 # Projects on the pipeline:
 
-The VIE role is expected to contribute to the most pressing projects currently at work at PDA:
--	Ancillary Services in Day-ahead (ADA) for Belgium and the Netherlands
-This project consists of supporting the ongoing developments to set up the costing and pricing processes to enable the bidding of the FCR, aFRR and mFRR capacities on the four daily tenders in Belgium and the three in the Netherlands, all expected to be live by the end of September 2020.
-Additional developments expected on this project are:
-o	A KPI on the bidding strategy for ancillary contracts that allows benchmarking and improving these strategies.
-o	An automated process computing a day-ahead/intraday risk factor to account for intraday risks (including optimal activation strategies) in the pricing of day-ahead contracts.
--	Genius algorithm for the automated bidding of thermal and pump-storage assets on the spot market
-This projects consists of supporting the improvement of the existing Genius algorithm. The algorithm outputs scenarios for the bidding of thermal assets (namely CCGTs and coal-fired plants) on the day-ahead auctions (energy). Foreseen improvements of the algorithms are:
-o	The accounting for contracted ancillary services on the assets being bid, so that the scenarios proposed ensure the delivery of said contracts.
-o	An extension of the algorithm to put forward scenarios for the pump storage assets in the portfolio.
+The VIE role is expected to contribute to the most pressing projects currently at work at PDA. These include a range of both business-related and IS-related developments:
+- Algorithm preparing bidding strategies for flexible assets on the spot auctions automatically. A functioning algorithm exists for flexible thermal assets, but a new algorithm needs to be developed for the pump storage assets in the portfolios (more complex bidding).
+- Forecasting of ancillary capacity prices for the day-ahead markets. A proof-of-concept (POC) has been developed to forecast prices for the reserve tenders (aFRR and mFRR) in Germany, leveraging machine learning techniques. This POC should now be extended to other markets (e.g. France).
+- Migration of the Excel EUA landscape to a server-side environment (Python-based). This would entail running all bidding processes on the server. It will allow simplifying the Excel EUAs to become only user interfaces calling data from the server (APIs).
+- Development of a framework (environment) operating all DA tasks in sequence (from server). This development will enable all operations in the DA shifts to be ran at their appropriate times (when the required inputs are available). 
 
 Depending on the progress made by the team on these projects and any other needs that may arise, the VIE role may be required to contribute on other topics.
 
-Operational support:
-
 All market operations performed at PDA are organized in shifts. Subject to availability and to the interest of the candidate, the VIE role may be extended to include training to perform any of these shifts.
 
-
-# Rules of the coding challenge : 
+# Rules of the coding challenge: 
 
 The exercise consists of two separate, independent parts (with two input files). You can use code lines for both parts and resolve them independently.
-
 
 => Inputs
 
@@ -48,7 +39,7 @@ Each of the two inputs files contains similar information, namely:
 - Gas (euro/MWh): the price of gas per MWh. If the gas price is at 6 euro/MWh and the efficiency of the powerplant is 50% (i.e. 2 units of gas will generate one unit of electricity), the cost of generating 1 MWh is 12 euro.
 - Kerosene (euro/MWh): the price of kerosene per MWh.
 - Co2 (euro/ton): the price of emission allowances (to be taken into account only optionally, not mandatory for the exercise).
-- Wind (%): wind coefficient. Example: if there is on average 25% wind during an hour, a wind-turbine with a capacity of 4 MW will generate 1 MWh of energy.
+- Wind (%): wind coefficient. Example: if there is on average 25% wind during one hour, a wind-turbine with a capacity of 4 MW will generate 1 MWh of energy.
 
 • Power plants: describes the assets at disposal to generate the demanded load. For each power plant, the information specified is the following:
 
@@ -59,7 +50,6 @@ Each of the two inputs files contains similar information, namely:
 -	Pmin: the minimum amount of power the plant generates when switched on.
 
 • Market spot prices (only for part 2).
-
 
 => Test
 
